@@ -1,4 +1,4 @@
-const { truncate } = require('fs');
+const  reactionSchema  = require('./Reaction');
 const { Schema, model } = require('mongoose');
 
 const thoughtSchema = new Schema(
@@ -19,18 +19,12 @@ const thoughtSchema = new Schema(
             required: true,
             //TODO: Link user with thought
         },
-        reactions: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'Reaction',
-            }
-        ],
+        reactions: [reactionSchema],
     },
     {
         toJSON: {
-            virtuals: true,
+            getters: true,
         },
-        id: false,
     }
 )
 

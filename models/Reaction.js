@@ -1,10 +1,10 @@
-const { Schema, model } = require('mongoose');
+const { Schema, Types } = require('mongoose');
 
 const reactionSchema = new Schema(
     {
         reactionId: {
-            //TODO: Use Mongoose's ObjectId data type
-            // Default value is set to a new ObjectId
+            type: Schema.Types.ObjectId,
+            default: () => new Types.ObjectId(),
         },
         reactionBody: {
             type: String,
@@ -19,13 +19,15 @@ const reactionSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now
-            //TODO: Getter method to format the timestamp on query
         }
     },
     {
         toJSON: {
-            virtuals: true,
+            getters: true,
         },
         id: false,
     }
 )
+
+
+module.exports = reactionSchema
