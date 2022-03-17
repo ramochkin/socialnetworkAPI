@@ -1,0 +1,25 @@
+{
+  "name": "socialnetworkapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "seed": "node utils/seed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramochkin/socialnetworkAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramochkin/socialnetworkAPI/issues"
+  },
+  "homepage": "https://github.com/ramochkin/socialnetworkAPI#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongoose": "^6.2.7"
+  }
+}
